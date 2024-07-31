@@ -3,5 +3,5 @@ mysql_root_password=
 db_pass=
 pg_pass=
 redis_pass=
-repositorio=https://github.com/wnjinfo/izing.open.io-2.0.git
+repositorio=https://github.com/wnjinfo/izing.open.io.git
 ipservidorubuntu=
