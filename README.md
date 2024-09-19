@@ -95,6 +95,16 @@ sudo ./izing
 Tente atualizar o Conector WWebJS whatsapp.js
 
 
+## Recomendação de instalar e deixar Firewall ativado
+
+Seu servidor pode sofrer ataques externos que fazem sistema travar e ter quedas por favor instale e mantenha o firewall ativado.
+Utilizado UFW para saber mais de pesquisada no google.
+
+## Instalando
+Seguem links sugerimos:
+-  [Como usar autoinstalador do IZING - Video](https://youtu.be/-Woqu4W5Zzs?si=jcZYX3yPL60XkAd_)
+-  [Como usar autoinstalador do IZING - Video opção 2](https://youtu.be/bZ-jXRtcGyc?si=B8oQxv0V0V36fgrF)
+
 ## Alterar Frontend
 
 Para mudar nome do aplicativo:
@@ -119,10 +129,13 @@ Sempre alterar usando usuario deploy você pode conectar servidor com aplicativo
 su deploy
 ```
 ```bash
-cd /home/deploy/izing.io/frontend/
+cd /home/deploy/pastaondetainstalado/frontend/
 ```
 ```bash
-npm run build
+export NODE_OPTIONS=--openssl-legacy-provider
+```
+```bash
+npx quasar build -P -m pwa
 ```
 
 Testar as alterações em aba anonima
@@ -141,12 +154,6 @@ docker exec -u root postgresql bash -c "chown -R postgres:postgres /var/lib/post
 docker container restart postgresql
 ```
 
-## Problemas enviar audios e noticações
-
-Isso porque você não possui certificado quando roda localmente consideram a conexão como insegura e bloqueiam o microfone.
-
-Você consegue resolver isto, acessando o link dentro do navegador Chrome; chrome://flags/#unsafely-treat-insecure-origin-as-secure e inserindo o ip com porta do seu frontend e backend.
-
 ## Acesso Portainer gerar senha
 "Your Portainer instance timed out for security purposes. To re-enable your Portainer instance, you will need to restart Portainer."
 
@@ -156,6 +163,7 @@ docker container restart portainer
 
 Depois acesse novamente url http://seuip:9000/
 
+
 ## Recomendação de VPS boa e barata
 
 -  [Powerful cloud VPS & Web hosting.](https://control.peramix.com/?affid=58)
@@ -164,6 +172,14 @@ Depois acesse novamente url http://seuip:9000/
 
 ```bash
 WHAZING
+```
+
+## Problemas enviar audios e noticações
+
+Isso porque você não possui certificado quando roda localmente consideram a conexão como insegura e bloqueiam o microfone.
+
+Você consegue resolver isto, acessando o link dentro do navegador Chrome; chrome://flags/#unsafely-treat-insecure-origin-as-secure e inserindo o ip com porta do seu frontend e backend.
+
 ```
 
 ## Consultoria particular
